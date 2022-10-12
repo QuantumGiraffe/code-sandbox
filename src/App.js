@@ -1,6 +1,8 @@
 
 
 import * as React from 'react';
+import Header from './components/Header.js'  
+
 
 const list = [
   {
@@ -25,27 +27,36 @@ const list = [
 // The above simulates information that you could get from an API or other information sources
 // Below we will see what we can do to present this information 
 
-
-
-
 function App() {
+
+  
   return (
+    
     <div>
-      <h1>My Hacker Stories</h1>
+      
+      <h1>My Stories:</h1>
+
+      < Header />
+    
 
       <label htmlFor="search">Search: </label>
       <input id="search" type="text" />
 
       <hr />
+      {/* this creates a horizontal line to break up page */}
 
+      
       <ul>
         {list.map(function (item) {
+          // performs the MAP method on the array LIST ---- I forget but I think that "item" is a prop
+          // What ITEM means is that each item in the LIST array is passed through as that variable
+          // This makes it possible to apply the below "template" to both objects in LIST
           return (
             <li key={item.objectID}>
               <span>
                 <a href={item.url}>{item.title}</a>
               </span>
-              <span>{item.author}</span>
+              <span id='author'>{item.author}</span>
               <span>{item.num_comments}</span>
               <span>{item.points}</span>
             </li>

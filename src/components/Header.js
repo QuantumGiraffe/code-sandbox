@@ -1,12 +1,26 @@
 
+// need to come back to this since I think I am forgetting something here 
 
 import React from 'react'
 
 
-export default function Header {
 
-    const = 'hello'
+export default function Header() {
+
+    const sausage = 'hello'
+
+    // In the function, you need to write RETURN to let it know what to list out. Before, I tried to write the following 
+    // without putting it in return brackets and it simply would not work 
+
+    return(
+    <h1>Where's the Peef?</h1>
+    )
 }
+
+
+
+
+
 
 
 // I need to remember how to make a Header component
