@@ -29,7 +29,30 @@ const list = [
 
 function App() {
 
-  
+  function List() {
+    return(
+      <ul>
+      {list.map(function (item) {
+        return (
+          // It is literally just JS mixed with HTML! JS is in brackets, HTML is outside brackets (but always
+          // Within "return()" within a function)
+          <li key={item.objectID}>
+            <span>
+              <a href={item.url}>{item.title}</a>
+            </span>
+            <span id='author'>{item.author}</span>
+            <span>{item.num_comments}</span>
+            <span>{item.points}</span>
+          </li>
+        );
+      })}
+    </ul>
+    )
+
+
+
+
+  }
   return (
     
     <div>
@@ -45,8 +68,9 @@ function App() {
       <hr />
       {/* this creates a horizontal line to break up page */}
 
-      
-      <ul>
+      {/* we are going to turn the following code into it's own function  */}
+
+      {/* <ul>
         {list.map(function (item) {
           // performs the MAP method on the array LIST ---- I forget but I think that "item" is a prop
           // What ITEM means is that each item in the LIST array is passed through as that variable
@@ -62,7 +86,10 @@ function App() {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
+
+      <List />
+
     </div>
   );
 }
