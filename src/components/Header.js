@@ -5,7 +5,7 @@ import React from 'react'
 
 const cat = {
     name: 'Sage',
-    occupation: 'loaf',
+    occupation: 'Loaf',
     nickname: "Puffins",
 }
 
@@ -30,8 +30,11 @@ export default function Header() {
 
     return(
     <>
-    <h1>Where's the Peef?</h1>
+    <h1>What's up with that Peef?</h1>
     <p> You may also know him by the name of: <Puffins /> </p>
+    <p> What does he do for a living? {cat.occupation} </p>
+
+    {/* ^^^ two ways to write out attributes! The 2nd one is direct JS and the 1st one is using a React component */}
     <br />
     <br />
     </>
