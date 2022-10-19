@@ -9,13 +9,22 @@ const cat = {
     nickname: "Puffins",
 }
 
+function getColor(color){
+    return color;
+}
+
 export default function Header() {
+    // export default const Header = () => {     --- React does not like this. I think it's because 
+    // "export default" is only made to work with a regular function 
 
     // const cat = {
     //     name: 'Sage',
     //     occupation: 'loaf',
     //     nickname: "Puffins",
     // }
+    // ^^^^^^ An object needs to be defined BEFORE THE FUNCTION, NOT INSIDE!
+
+   
 
     function Puffins() {
         return(
@@ -33,6 +42,7 @@ export default function Header() {
     <h1>What's up with that Peef?</h1>
     <p> You may also know him by the name of: <Puffins /> </p>
     <p> What does he do for a living? {cat.occupation} </p>
+    <p> His color is: {getColor("orange")}</p>
 
     {/* ^^^ two ways to write out attributes! The 2nd one is direct JS and the 1st one is using a React component */}
     <br />

@@ -27,12 +27,16 @@ const list = [
 // The above simulates information that you could get from an API or other information sources
 // Below we will see what we can do to present this information 
 
-function App() {
-
-  function List() {
+// function App() {    - this is the original way to write a function 
+const App = () => {
+// ^^^ This is an arrow function! Apparently, they are good because they can be "used more concisely"
+    
+  // function List() {
+    const List = () => {
     return(
       <ul>
-      {list.map(function (item) {
+      {/* {list.map(function (item) {            ------ Refactor below */}
+      {list.map((item) => {
         return (
           // It is literally just JS mixed with HTML! JS is in brackets, HTML is outside brackets (but always
           // Within "return()" within a function)
@@ -47,23 +51,27 @@ function App() {
         );
       })}
     </ul>
+  )}
+
+  const Search = () => {
+    return(
+      <div>
+          <label htmlFor="search">Search: </label>
+          <input id="search" type="text" />
+      </div>
     )
-
-
-
-
   }
+
+
   return (
-    
     <div>
-      
-      <h1>My Stories:</h1>
+      <h2>Unexplained Mysteries:</h2>
 
-      < Header />
+      <Header />
     
-
-      <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+      <Search />
+      {/* <label htmlFor="search">Search: </label>
+      <input id="search" type="text" /> */}
 
       <hr />
       {/* this creates a horizontal line to break up page */}
@@ -90,13 +98,31 @@ function App() {
 
       <List />
 
+    
+
+
     </div>
   );
 }
 
+
+
+
+
+
+
+// ^^^^^ WTF is up with that?? when I put the Search function right underneath the List function 
+// (but before the App function, it said Search "is defined but not used". Now that it is 
+// below the App function it works perfectly, why??? why couldn't it work before? )
+
+// ^^^ This is so strange, before it absolutely would not let me write Search above App. Now it does - 
+// I switched it with the List component, had no issues, then when I added it above, still no issues. 
+// -------------Maybe that was a bug with VS Code? Very strange!!!!
+
+
 export default App;
 
-
+// Item component and Search component are LEAF components (no components come from them (no children))
 
 
 
