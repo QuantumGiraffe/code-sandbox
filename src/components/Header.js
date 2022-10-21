@@ -39,6 +39,7 @@ export default function Header() {
 
     return(
     <>
+    <h2>Unexplained Mysteries:</h2>
     <h1>What's up with that Peef?</h1>
     <p> You may also know him by the name of: <Puffins /> </p>
     <p> What does he do for a living? {cat.occupation} </p>

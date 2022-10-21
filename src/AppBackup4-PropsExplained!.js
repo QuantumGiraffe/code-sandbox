@@ -96,25 +96,22 @@ const App = () => {
   // =======================================================
 
   const Search = () => {
-    const[searchTerm, setSearchTerm] = React.useState('');
 
     const handleChange = (event) => {
-
-      setSearchTerm(event.target.value);
-
-      // This is for browser console testing:---
-      // console.log(event);
-      // console.log(event.target.value)
+      console.log(event);
+      console.log(event.target.value)
     }
+  // ^^This is called an event handler function 
 
     return(
       <div>
           <label htmlFor="search">Search: </label>
           <input id="search" type="text" onChange={handleChange} />
-      
-          {/* This renders out the search term for us to see: */}
-          <h2>{searchTerm}</h2>
+          {/* onChange is a JSX attribute! */}
+          {/* DO NOT WRITE: onChange={handleChange()} -- NO NEED FOR MORE BRACKETS */}
 
+          {/* onBlur is another JSX attribute - when the mouse clicks off (unselects) something, 
+          will fire */}
       </div>
     )
     }
