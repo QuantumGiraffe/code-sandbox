@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Header from './components/Header.js'  
-import CSS from './App.css'
+import './App.css'
 
 
 const App = () => {
@@ -17,6 +17,16 @@ const App = () => {
       author: ' - The Muffins',
     },
   ];
+
+  // function consoleLog(){
+  //   return(
+  //     console.log("List component rendered")
+  //   )
+  // }
+  // consoleLog()
+
+  console.log('App component rendered')
+
 
   return(
       <div>
@@ -47,7 +57,7 @@ const App = () => {
 
 // =======================================
 
-    const List = (props) => (
+    const List = (props) => {
       // **May not be entirely accurate:**
 
       // PROPS, the argument above, as well as located in the line below, is like a React SYNTAX
@@ -57,8 +67,7 @@ const App = () => {
       // so it's like these two instances of PROPS are just syntax, instructions
       // Essentially, these PROPS don't actually have any VALUES at all, they are just instructions
       // I think that's one place I was getting very confused before!!!!
-
-
+     
       <ul>
         {props.thisIsAProp.map((item) => (
           // In the above Line, first remember that ThisIsAProp is equal to the value of myList
@@ -70,17 +79,18 @@ const App = () => {
           // The value of the ITEM prop is equal to that of the "item" in brackets that
           // We are mapping over. 
 
+          
         ))}
 
       </ul>
-  );
+    };
 
   // =======================================================
 
   const Item = (props) => (
 
-    <li>
-      
+
+    <li >
         {/* the Key is now located above, within the instance of the Item component */}
       <span id="title">{props.item.title}</span>
       <span id='author'>{props.item.author}</span>
@@ -89,6 +99,9 @@ const App = () => {
     // The PROPS=SYNTAX analogy really works for my understanding!!!
     // In this case, the ACTUAL prop (thing that has an actual value/information, is ITEM)
     // The PROPS instructions are telling React to get ready and import for use the prop ITEM
+  
+  
+
   );
 
 

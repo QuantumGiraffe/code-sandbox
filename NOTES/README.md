@@ -2,6 +2,10 @@
  sandbox for react code
 
 
+OPTION+COMMAND+I to open developer tools in firefox!!!
+
+
+
 TERMS
 
 >Single Page Application - in this case, the "Single Page" is the single Index.html file that will come over the wire, the rest of the entire website is rendered into that index.html via React turning JSX 
