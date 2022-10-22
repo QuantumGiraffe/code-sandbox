@@ -18,22 +18,28 @@ const App = () => {
     },
   ];
 
-  // function consoleLog(){
-  //   return(
-  //     console.log("List component rendered")
-  //   )
-  // }
-  // consoleLog()
 
-  console.log('App component rendered')
-
+  const handleSearch = (event) => {
+    // A
+    console.log(event.target.value);
+    // D
+  };
+  // This shows us in our browser console the console.log of the values we type into the search bar 
 
   return(
       <div>
 
         <Header />
-        <Search />
+
+        <Search onSearch={handleSearch} />
+        {/* B */}
+
+        {/* Here we are passing a prop called onSearch to the component called Search. 
+            The information we are passing via props is in the form of a function called HANDLE_SEARCH */}
+        
+
         <hr />
+
         <List thisIsAProp={myList}/>
         {/* We are passing the LIST component a prop called ThisIsAProp. 
             this prop called ThisIsAProp is assigned the value of the array called myList.
@@ -108,25 +114,43 @@ const App = () => {
 
   // =======================================================
 
-  const Search = () => {
+  const Search = (props) => {
     const[searchTerm, setSearchTerm] = React.useState('');
 
     const handleChange = (event) => {
-
+      // Here, the EVENT is a letter! For example Event="g"
       setSearchTerm(event.target.value);
+      // In this example it's  assigning the letter/string "g" to the SearchTerm
+      // If you see below, this is why when you type "g" it will show up on the page!
+
+      props.onSearch(event);
+      // C
+      
+      // the onSearch prop was passed to this Search component via props. 
+      // The value of ONSEARCH is the function called HANDLESEARCH (see the App component above). 
+      // HERE, we are passing the function HandleSearch the argument called EVENT
+
+
+
+
 
       // This is for browser console testing:---
       // console.log(event);
       // console.log(event.target.value)
+
+      
+        
+
     }
 
     return(
       <div>
           <label htmlFor="search">Search: </label>
           <input id="search" type="text" onChange={handleChange} />
+          {/* ONCHANGE is a JSX Attribute!!!  */}
       
           {/* This renders out the search term for us to see: */}
-          <h2>{searchTerm}</h2>
+          <h2>Searching for: {searchTerm}</h2> 
 
       </div>
     )
