@@ -4,15 +4,9 @@ import * as React from 'react';
 import Header from './components/Header.js'  
 import './App.css'
 
-// This iteration of the App file - about to move the state function from the Search component to the App component. 
-// We want to do this because we want to be able to filter the list of seach terms. Moving it to the App component is the easiest
-// way to accomplish this, since otherwise we would also need to pass myList to the search component, and then using callbacks, back up 
-// to the Search component. 
 
-// TASK: move the STATE up into the App component, from the Search component 
 const App = () => {
 
-  // In the RR book, myList (shown below) is called Stories 
   const myList= [
     {
       title: 'Puff',
